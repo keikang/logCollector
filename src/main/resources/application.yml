@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: local
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:postgresql://localhost:5433/agens
+    username: agens
+    password: agens
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://192.168.0.65:5414/postgres
+    username: agens
+    password: agens
+
+---
+
+server:
+  # Sevlet(?? @RequestParm? ??) charset ??
+  port: 10003
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
